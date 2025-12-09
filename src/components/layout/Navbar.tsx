@@ -1,0 +1,85 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X, Download, ChevronDown } from "lucide-react";
+
+const navLinks = [
+  { label: "How it works", href: "#how-it-works" },
+  { label: "Earn", href: "#earn" },
+  { label: "For Creators", href: "#creators" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Docs", href: "#docs" },
+];
+
+export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+              <img src="/Frame 1194.svg" alt="SeedRush Logo" className="w-10 h-10" />
+            <span className="text-xl font-bold text-foreground">SeedRush</span>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Desktop CTA */}
+          <div className="hidden lg:flex items-center gap-4">
+            <a href="#community" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Community
+            </a>
+            <Button size="default" className="gap-2">
+              <Download className="w-4 h-4" />
+              Download
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 text-foreground"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="lg:hidden py-4 border-t border-border/50">
+            <div className="flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <div className="pt-4 px-4">
+                <Button variant="hero" className="w-full gap-2">
+                  <Download className="w-4 h-4" />
+                  Download SeedRush
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+};

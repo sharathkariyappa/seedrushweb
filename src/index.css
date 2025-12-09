@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 210 60% 10%;
+    --foreground: 180 100% 95%;
+
+    --card: 210 50% 12%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 210 50% 12%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 182 94% 47%;
+    --primary-foreground: 210 60% 10%;
+
+    --secondary: 210 45% 15%;
+    --secondary-foreground: 180 100% 95%;
+
+    --muted: 210 40% 18%;
+    --muted-foreground: 210 20% 60%;
+
+    --accent: 182 94% 47%;
+    --accent-foreground: 210 60% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 30% 20%;
+    --input: 210 30% 20%;
+    --ring: 182 94% 47%;
+
+    --radius: 0.75rem;
+
+    /* Custom SeedRush tokens */
+    --seedrush-bg-dark: 210 60% 10%;
+    --seedrush-bg-medium: 210 50% 12%;
+    --seedrush-bg-light: 210 45% 15%;
+    --seedrush-cyan: 182 94% 47%;
+    --seedrush-cyan-glow: 182 94% 60%;
+    --seedrush-green: 145 70% 50%;
+    --seedrush-orange: 30 90% 55%;
+    --seedrush-purple: 270 70% 60%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(210 60% 10%) 0%, hsl(210 50% 14%) 50%, hsl(210 45% 12%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(210 50% 14%) 0%, hsl(210 55% 11%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(182 94% 47% / 0.15) 0%, transparent 70%);
+    --gradient-cyan: linear-gradient(135deg, hsl(182 94% 47%) 0%, hsl(182 94% 60%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(182 94% 70%) 0%, hsl(182 94% 47%) 50%, hsl(145 70% 50%) 100%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 60px hsl(182 94% 47% / 0.3);
+    --shadow-card: 0 4px 24px hsl(210 60% 5% / 0.5);
+    --shadow-button: 0 4px 20px hsl(182 94% 47% / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .dark {
+    --background: 210 60% 10%;
+    --foreground: 180 100% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, hsl(182 94% 47% / 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(182 94% 47% / 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-radial-glow {
+    background: var(--gradient-glow);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
