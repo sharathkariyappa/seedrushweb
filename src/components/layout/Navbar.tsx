@@ -26,13 +26,10 @@ export const Navbar = () => {
             <img
               src="/Full_logo_Dark.svg"
               alt="SeedRush Logo"
-              className="w-28 h-auto"
+              className="w-36 h-auto scale-105"
             />
-            <p className="text-xs text-gray-400">
-              Earn while you seed
-            </p>
           </div>
-          </Link>
+        </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
