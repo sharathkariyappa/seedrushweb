@@ -22,10 +22,16 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/">
-            <div className="flex items-center gap-3 cursor-pointer">
-              <img src="/loogo.png" alt="SeedRush Logo" className="w-10 h-10 rounded-md" />
-              <span className="text-xl font-bold text-foreground">SeedRush</span>
-            </div>
+          <div className="flex flex-col gap-1">
+            <img
+              src="/Full_logo_Dark.svg"
+              alt="SeedRush Logo"
+              className="w-28 h-auto"
+            />
+            <p className="text-xs text-gray-400">
+              Earn while you seed
+            </p>
+          </div>
           </Link>
 
           {/* Desktop Navigation */}
