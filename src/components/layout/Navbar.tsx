@@ -10,7 +10,7 @@ const navLinks = [
   { label: "For Creators", href: "/creators" },
   { label: "Security", href: "/security" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Developer Docs", href: "/developers" },
+  // { label: "Developer Docs", href: "/developers" },
 ];
 
 export const Navbar = () => {
