@@ -8,6 +8,7 @@ import { PersonasSection } from "@/components/sections/PersonasSection";
 import { SecuritySection } from "@/components/sections/SecuritySection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { CTASection } from "@/components/sections/CTASection";
+// import RequestAccessForm from "@/components/sections/RequestAccessForm";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
         <PersonasSection />
         <SecuritySection />
         <PricingSection />
+        {/* <RequestAccessForm /> */}
         <CTASection />
       </main>
     </div>

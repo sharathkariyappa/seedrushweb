@@ -10,6 +10,7 @@ const navLinks = [
   { label: "For Creators", href: "/creators" },
   { label: "Security", href: "/security" },
   { label: "Pricing", href: "/pricing" },
+  { label: 'request access', href: '/request-access' },
   // { label: "Developer Docs", href: "/developers" },
 ];
 

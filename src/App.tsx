@@ -13,6 +13,7 @@ import SecurityPage from "./pages/Security";
 import HowItWorksPage from "./pages/HowItWorks";
 import CreatorsPage from "./pages/Creators";
 import { Navbar } from "./components/layout/Navbar";
+import RequestAccessForm from "@/components/sections/RequestAccessForm";
 
 const queryClient = new QueryClient();
 const PageWithNavbar = () => (
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/security" element={<SecurityPage />} />
             <Route path="/how-it-works" element={<HowItWorksPage />} />
             <Route path="/creators" element={<CreatorsPage />} />
+            <Route path="/request-access" element={<RequestAccessForm />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
