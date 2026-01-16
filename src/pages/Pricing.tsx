@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { DollarSign, Zap, Shield, TrendingUp, Info, Download } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const PricingPage = () => {
   const [trafficType, setTrafficType] = useState('light');
   const [dataAmount, setDataAmount] = useState(10);
+  const navigate = useNavigate();
 
   const priceBands = {
     light: { min: 600, max: 900, label: 'Light traffic', color: 'text-green-500' },
@@ -273,7 +275,9 @@ const PricingPage = () => {
           <p className="text-muted-foreground mb-8">
             Download SeedRush and set your own pricing. The network is waiting.
           </p>
-          <button className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
+          <button 
+            onClick={() => { navigate('/request-access'); }}
+            className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
             <Download className="w-6 h-6" />
             Download SeedRush
           </button>

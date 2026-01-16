@@ -1,7 +1,9 @@
 import React from 'react';
 import { Rocket, DollarSign, Zap, FileText, Users, Globe, Lock, MessageSquare } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const CreatorsPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-grid-pattern">
       {/* Hero Section */}
@@ -14,13 +16,15 @@ const CreatorsPage = () => {
             Sponsor fast, reliable seeding at launch—and let demand fund the rest, per chunk.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-2">
+            <button 
+              onClick={() => { navigate('/request-access'); }}
+              className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-2">
               <MessageSquare className="w-5 h-5" />
               Talk to us
             </button>
-            <a href="#" className="bg-secondary text-foreground px-8 py-4 rounded-xl text-lg font-bold hover:bg-secondary/80 transition-all inline-flex items-center gap-2 border border-border">
+            {/* <a href="#" className="bg-secondary text-foreground px-8 py-4 rounded-xl text-lg font-bold hover:bg-secondary/80 transition-all inline-flex items-center gap-2 border border-border">
               Packaging guide →
-            </a>
+            </a> */}
           </div>
         </div>
       </section>
@@ -255,13 +259,15 @@ const CreatorsPage = () => {
             Get in touch to discuss your use case and access our creator toolkit.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
+            <button 
+              onClick={() => { navigate('/request-access'); }}
+              className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
               <MessageSquare className="w-6 h-6" />
               Contact team
             </button>
-            <a href="#" className="bg-secondary text-foreground px-10 py-5 rounded-xl text-xl font-bold hover:bg-secondary/80 transition-all inline-flex items-center gap-3 border border-border">
+            {/* <a href="#" className="bg-secondary text-foreground px-10 py-5 rounded-xl text-xl font-bold hover:bg-secondary/80 transition-all inline-flex items-center gap-3 border border-border">
               Read packaging guide →
-            </a>
+            </a> */}
           </div>
         </div>
       </section>

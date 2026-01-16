@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Download, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -16,6 +17,7 @@ const navLinks = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
@@ -48,11 +50,7 @@ export const Navbar = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <Button 
-              onClick={() => {
-                const howItWorksSection = document.getElementById("request-access");
-                if (howItWorksSection) {
-                  howItWorksSection.scrollIntoView({ behavior: "smooth" });
-                }
+              onClick={() => {navigate('/request-access')
               }}
               size="default" className="gap-2">
               <Download className="w-4 h-4" />
@@ -85,11 +83,7 @@ export const Navbar = () => {
               ))}
               <div className="pt-4 px-4">
                 <Button 
-                  onClick={() => {
-                    const howItWorksSection = document.getElementById("request-access");
-                    if (howItWorksSection) {
-                      howItWorksSection.scrollIntoView({ behavior: "smooth" });
-                    }
+                  onClick={() => {navigate('/request-access')
                   }}
                   variant="hero" className="w-full gap-2">
                   <Download className="w-4 h-4" />
