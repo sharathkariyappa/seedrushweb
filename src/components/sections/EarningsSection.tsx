@@ -48,7 +48,14 @@ export const EarningsSection = () => {
               ))}
             </div>
 
-            <Button variant="hero" size="lg" className="gap-2">
+            <Button
+              onClick={() => {
+                const howItWorksSection = document.getElementById("request-access");
+                if (howItWorksSection) {
+                  howItWorksSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              variant="hero" size="lg" className="gap-2">
               <Download className="w-5 h-5" />
               Start seeding & earn
             </Button>

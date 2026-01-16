@@ -47,7 +47,14 @@ export const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button size="default" className="gap-2">
+            <Button 
+              onClick={() => {
+                const howItWorksSection = document.getElementById("request-access");
+                if (howItWorksSection) {
+                  howItWorksSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              size="default" className="gap-2">
               <Download className="w-4 h-4" />
               Download
             </Button>
@@ -77,7 +84,14 @@ export const Navbar = () => {
                 </Link>
               ))}
               <div className="pt-4 px-4">
-                <Button variant="hero" className="w-full gap-2">
+                <Button 
+                  onClick={() => {
+                    const howItWorksSection = document.getElementById("request-access");
+                    if (howItWorksSection) {
+                      howItWorksSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  variant="hero" className="w-full gap-2">
                   <Download className="w-4 h-4" />
                   Download SeedRush
                 </Button>

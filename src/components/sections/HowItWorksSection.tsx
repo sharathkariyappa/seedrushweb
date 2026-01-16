@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, FileDown, Coins, Key } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const steps = [
   {
@@ -29,6 +30,7 @@ const steps = [
 ];
 
 export const HowItWorksSection = () => {
+  const navigate = useNavigate();
   return (
     <section id="how-it-works" className="py-20 lg:py-32 relative bg-secondary/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,7 +81,9 @@ export const HowItWorksSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button variant="hero-outline" size="lg" className="gap-2">
+          <Button 
+            onClick={() => navigate("/how-it-works")}
+            variant="hero-outline" size="lg" className="gap-2">
             Learn the mechanics
             <ArrowRight className="w-4 h-4" />
           </Button>

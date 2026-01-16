@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { TrendingUp, DollarSign, Clock, Zap, FileText, Download, Upload, Info } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const EarnPage = () => {
   const [uploadSpeed, setUploadSpeed] = useState(50);
   const [hoursPerDay, setHoursPerDay] = useState(12);
   const [pricePerMib, setPricePerMib] = useState(1000);
+  const navigate = useNavigate();
 
   // Calculate estimated earnings
   const calculateEarnings = () => {
@@ -26,7 +28,10 @@ const EarnPage = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Set a price floor and seed what you love. SeedRush handles payments, receipts, and reputation.
           </p>
-          <button className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
+          <button 
+            onClick={() => navigate('/request-access')
+            }
+            className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
             <Download className="w-6 h-6" />
             Download & start earning
           </button>
@@ -268,7 +273,10 @@ const EarnPage = () => {
           <p className="text-muted-foreground mb-8">
             Download SeedRush and turn your idle bandwidth into income today.
           </p>
-          <button className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
+          <button 
+            onClick={() => navigate('/request-access')
+            }
+            className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
             <Download className="w-6 h-6" />
             Download SeedRush
           </button>

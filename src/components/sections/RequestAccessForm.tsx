@@ -53,7 +53,7 @@ export const RequestAccessSection = () => {
           <div className="bg-card border border-border rounded-2xl p-8">
             {success && (
               <div className="mb-6 rounded-xl bg-seedrush-green/10 text-seedrush-green px-4 py-3 text-sm">
-                ✅ Your request has been submitted successfully. We’ll get back to you soon.
+                Your request has been submitted successfully. We’ll get back to you soon.
               </div>
             )}
 

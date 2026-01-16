@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Key, RefreshCcw, FileText } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const securityFeatures = [
   {
@@ -20,6 +21,7 @@ const securityFeatures = [
 ];
 
 export const SecuritySection = () => {
+  const navigate = useNavigate();
   return (
     <section id="security" className="py-20 lg:py-32 bg-secondary/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,7 +79,9 @@ export const SecuritySection = () => {
               ))}
             </div>
 
-            <Button variant="hero-outline" size="lg" className="gap-2">
+            <Button 
+              onClick={() => {navigate("/security")}}
+              variant="hero-outline" size="lg" className="gap-2">
               Read our security approach
               <ArrowRight className="w-4 h-4" />
             </Button>

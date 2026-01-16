@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight, Shield, Wallet, Zap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const trustBadges = [
   { icon: Shield, label: "Non-custodial" },
@@ -8,6 +9,7 @@ const trustBadges = [
 ];
 
 export const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Effects */}
@@ -31,11 +33,25 @@ export const HeroSection = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button variant="hero" size="xl" className="gap-3 w-full sm:w-auto">
+            <Button 
+              onClick={() => {
+                const howItWorksSection = document.getElementById("request-access");
+                if (howItWorksSection) {
+                  howItWorksSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              variant="hero" size="xl" className="gap-3 w-full sm:w-auto">
               <Download className="w-5 h-5" />
               Download SeedRush
             </Button>
-            <Button variant="hero-outline" size="xl" className="gap-2 w-full sm:w-auto">
+            <Button 
+              onClick={() => {
+                const howItWorksSection = document.getElementById("how-it-works");
+                if (howItWorksSection) {
+                  howItWorksSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              variant="hero-outline" size="xl" className="gap-2 w-full sm:w-auto">
               See how it works
               <ArrowRight className="w-5 h-5" />
             </Button>

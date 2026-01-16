@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Download, Copy, Check, Apple, Monitor, Terminal } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const DownloadPage = () => {
   const [selectedOS, setSelectedOS] = useState('macos');
   const [copied, setCopied] = useState(false);
+  const navigate = useNavigate();
 
   const osData = {
     macos: {
@@ -68,7 +70,9 @@ const DownloadPage = () => {
 
           {/* Download Button */}
           <div className="animate-slide-up">
-            <button className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect">
+            <button 
+              onClick={() => {navigate('/request-access')}}
+              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect">
               <Download className="w-6 h-6" />
               Download for {osData[selectedOS].name}
             </button>

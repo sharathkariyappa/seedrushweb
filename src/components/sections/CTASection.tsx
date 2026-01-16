@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight, Apple, Monitor } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const CTASection = () => {
+  const navigate = useNavigate();
   return (
     <section id="download" className="py-20 lg:py-32 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -16,11 +18,25 @@ export const CTASection = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <Button variant="hero" size="xl" className="gap-3 w-full sm:w-auto">
+            <Button 
+              onClick={() => {
+                const howItWorksSection = document.getElementById("request-access");
+                if (howItWorksSection) {
+                  howItWorksSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              variant="hero" size="xl" className="gap-3 w-full sm:w-auto">
               <Download className="w-5 h-5" />
               Download SeedRush
             </Button>
-            <Button variant="hero-outline" size="xl" className="gap-2 w-full sm:w-auto">
+            <Button 
+              onClick={() => {
+                const howItWorksSection = document.getElementById("how-it-works");
+                if (howItWorksSection) {
+                  howItWorksSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              variant="hero-outline" size="xl" className="gap-2 w-full sm:w-auto">
               Read How it works
               <ArrowRight className="w-5 h-5" />
             </Button>

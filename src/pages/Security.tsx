@@ -1,7 +1,9 @@
 import React from 'react';
 import { Shield, Lock, Key, FileText, Clock, AlertTriangle, Mail, Download } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const SecurityPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-grid-pattern">
       {/* Hero Section */}
@@ -330,7 +332,9 @@ const SecurityPage = () => {
           <p className="text-muted-foreground mb-8">
             Experience peer-to-peer file sharing with cryptographic guarantees and full control over your keys.
           </p>
-          <button className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
+          <button 
+            onClick={() => {navigate("/request-access")}}
+            className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
             <Download className="w-6 h-6" />
             Download SeedRush
           </button>
