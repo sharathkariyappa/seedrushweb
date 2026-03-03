@@ -35,16 +35,15 @@ export const RequestAccessSection = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            Early access
+            Contact us
           </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Request access to<br />SeedRush
+            Need help with SeedRush?
           </h2>
 
           <p className="text-lg text-muted-foreground">
-            Get early access to atomic, pay-per-chunk torrenting powered by BSV.
-            Tell us who you are and how you plan to use SeedRush.
+            Tell us who you are and how we can assist you, and our team will get back to you as soon as possible.
           </p>
         </div>
 
@@ -106,7 +105,7 @@ export const RequestAccessSection = () => {
                 className="w-full gap-2"
                 disabled={loading}
               >
-                {loading ? "Submitting..." : "Submit request"}
+                {loading ? "Submitting..." : "Contact Us"}
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </form>

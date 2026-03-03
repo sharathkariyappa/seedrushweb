@@ -29,7 +29,7 @@ const EarnPage = () => {
             Set a price floor and seed what you love. SeedRush handles payments, receipts, and reputation.
           </p>
           <button 
-            onClick={() => navigate('/request-access')
+            onClick={() => navigate('/download')
             }
             className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
             <Download className="w-6 h-6" />
@@ -274,7 +274,7 @@ const EarnPage = () => {
             Download SeedRush and turn your idle bandwidth into income today.
           </p>
           <button 
-            onClick={() => navigate('/request-access')
+            onClick={() => navigate('/download')
             }
             className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
             <Download className="w-6 h-6" />

@@ -34,11 +34,7 @@ export const HeroSection = () => {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Button 
-              onClick={() => {
-                const howItWorksSection = document.getElementById("request-access");
-                if (howItWorksSection) {
-                  howItWorksSection.scrollIntoView({ behavior: "smooth" });
-                }
+              onClick={() => {navigate('/download')
               }}
               variant="hero" size="xl" className="gap-3 w-full sm:w-auto">
               <Download className="w-5 h-5" />

@@ -50,7 +50,7 @@ export const Navbar = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <Button 
-              onClick={() => {navigate('/request-access')
+              onClick={() => {navigate('/download')
               }}
               size="default" className="gap-2">
               <Download className="w-4 h-4" />
@@ -83,7 +83,7 @@ export const Navbar = () => {
               ))}
               <div className="pt-4 px-4">
                 <Button 
-                  onClick={() => {navigate('/request-access')
+                  onClick={() => {navigate('/download')
                   }}
                   variant="hero" className="w-full gap-2">
                   <Download className="w-4 h-4" />

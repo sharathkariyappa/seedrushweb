@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Download, TrendingUp, Clock, Wifi } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const EarningsSection = () => {
   const [uploadSpeed, setUploadSpeed] = useState([50]); // Mbps
@@ -13,6 +14,7 @@ export const EarningsSection = () => {
   const totalMibPerDay = mbpsToMibPerSecond * 3600 * hoursPerDay[0];
   const estimatedSatsPerDay = Math.floor(totalMibPerDay * pricePerMib[0] * 0.4); // 40% utilization factor
   const estimatedUsdPerDay = (estimatedSatsPerDay / 100000000 * 65000).toFixed(2); // Assuming BTC price
+  const navigate = useNavigate();
 
   return (
     <section id="earn" className="py-20 lg:py-32 relative">
@@ -49,11 +51,7 @@ export const EarningsSection = () => {
             </div>
 
             <Button
-              onClick={() => {
-                const howItWorksSection = document.getElementById("request-access");
-                if (howItWorksSection) {
-                  howItWorksSection.scrollIntoView({ behavior: "smooth" });
-                }
+              onClick={() => {navigate('/download')
               }}
               variant="hero" size="lg" className="gap-2">
               <Download className="w-5 h-5" />

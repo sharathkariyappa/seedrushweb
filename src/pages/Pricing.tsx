@@ -276,7 +276,7 @@ const PricingPage = () => {
             Download SeedRush and set your own pricing. The network is waiting.
           </p>
           <button 
-            onClick={() => { navigate('/request-access'); }}
+            onClick={() => { navigate('/download'); }}
             className="bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect inline-flex items-center gap-3">
             <Download className="w-6 h-6" />
             Download SeedRush
