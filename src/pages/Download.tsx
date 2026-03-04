@@ -12,18 +12,21 @@ const DownloadPage = () => {
       icon: <Apple className="w-6 h-6" />,
       version: '1.0.0',
       minVersion: 'ARM',
+      downloadUrl: "https://api.neucron.io/assets/seedrush-mac-arm.dmg"
     },
     windows: {
       name: 'Windows',
       icon: <Monitor className="w-6 h-6" />,
       version: '1.0.0',
       minVersion: 'x86 ARM',
+      downloadUrl: ""
     },
     linux: {
       name: 'Linux',
       icon: <Terminal className="w-6 h-6" />,
       version: '1.0.0',
       minVersion: 'flatpak',
+      downloadUrl: ""
     }
   };
 
@@ -57,12 +60,14 @@ const DownloadPage = () => {
 
           {/* Download Button */}
           <div className="animate-slide-up">
-            <button 
-              onClick={() => {navigate('/request-access')}}
-              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect">
+            <a
+              href={osData[selectedOS].downloadUrl}
+              download
+              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-all duration-300 glow-effect"
+            >
               <Download className="w-6 h-6" />
               Download for {osData[selectedOS].name}
-            </button>
+            </a>
             <p className="text-sm text-muted-foreground mt-4">
               Version {osData[selectedOS].version} • Available as a {osData[selectedOS].minVersion}
             </p>
