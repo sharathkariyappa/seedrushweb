@@ -26,7 +26,7 @@ const DownloadPage = () => {
       icon: <Terminal className="w-6 h-6" />,
       version: '1.0.0',
       minVersion: 'flatpak',
-      downloadUrl: ""
+      downloadUrl: "https://api.neucron.io/assets/seedrush-linux.flatpak"
     }
   };
 
