@@ -19,7 +19,7 @@ const DownloadPage = () => {
       icon: <Monitor className="w-6 h-6" />,
       version: '1.0.0',
       minVersion: 'x86 ARM',
-      downloadUrl: ""
+      downloadUrl: "https://api.neucron.io/assets/seedrush-windows-amd64.exe"
     },
     linux: {
       name: 'Linux',
